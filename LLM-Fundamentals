@@ -1,0 +1,221 @@
+Inside ChatGPT: What Happens After You Hit Enter?
+
+Answer: Step 1: Your Text Gets Converted Into Tokens
+When you hit send, ChatGPT doesn’t see your sentence as words.
+
+It sees tokens.
+
+Example:
+Prompt: "What is machine learning?"
+
+Gets broken into:
+["What", "is", "machine", "learning", "?"]
+
+Tokens are the smallest units the model processes. Sometimes they’re full words. Sometimes they’re pieces of words. Sometimes they’re just punctuation.
+
+
+Computers don’t speak English. They speak math.
+
+So every token gets converted into a number called a token ID.
+
+Example:
+
+"What"     → 102
+"is"      → 2
+"machine" → 834
+"learning"→ 919
+"?"        → 43
+Your sentence is now:
+
+[102, 2, 834, 919, 43]
+
+
+Your tokens enter the Transformer, a neural network architecture that changed everything in AI.
+
+You might have heard a lot of people talking about “Attention” in AI world.
+
+What is Attention?
+Attention lets each word “look at” every other word in your prompt to understand
+
+Step 4: The Model Predicts the Next Token
+The model doesn’t generate your entire response at once.
+
+It predicts one token at a time.
+
+After processing your prompt, the model outputs a probability distribution over its entire vocabulary (50,000+ tokens).
+
+Step 5: Repeat
+Now the model adds that token to your prompt and runs the process again.
+This loop continues token by token until:
+The model predicts a stop token, OR
+It hits the maximum response length
+
+When you prompt ChatGPT:
+
+Your text → broken into tokens
+Tokens → converted to numbers
+Numbers → transformed by neural network layers
+Model → predicts next token probabilities
+One token selected → added to sequence
+Repeat until done
+One token. One prediction. One loop.
+
+
+=================================================================================================================================================================
+=================================================================================================================================================================
+
+2. What is the Transformer architecture and how does it work?
+
+A Transformer takes a sequence of tokens as input and produces a sequence of tokens as output. That is it. At a very high level, it is a tokens-in, 
+tokens-out machine. And since tokens come from text and turn back into text, we can also think of it as a text-in, text-out machine.
+
+For example, if we give it "Translate: I love learning" as input, it produces "J'adore apprendre" as output. 
+If we give it "What is the capital of France?" as input, it produces "The capital of France is Paris." as output.
+
+Why Was the Transformer Needed?
+Before the Transformer, models processed words one by one, in order - like reading a sentence from left to right, one word at a time.
+
+This had two big problems:
+
+Problem 1: Forgetting. As sentences got longer, the model would start forgetting earlier words. By the time it reached the 50th word, its memory of the 1st word was very weak.
+
+Problem 2: Slowness. Because words were processed one after another, the 2nd word had to wait for the 1st word to finish, the 3rd word had to wait for the 2nd, and so on. This was very slow.
+
+So, here comes the Transformer to the rescue. It processes all input tokens at the same time and lets every token look at every other token directly. 
+Long-range connections are no longer a major problem. And because everything happens in parallel, training became much faster. We will see exactly how this works in the upcoming sections.
+
+The Transformer was introduced in 2017 in the famous research paper "Attention Is All You Need" by researchers at Google. It changed everything.
+
+The Architecture Has Two Halves
+
+The original Transformer has two main halves:
+
+The Encoder - this half reads and understands the input
+The Decoder - this half generates the output
+Think of it like a conversation between a reader and a writer. The reader (encoder) reads a document carefully and creates detailed notes. 
+The writer (decoder) uses those notes to write a new document. The reader focuses on understanding. The writer focuses on producing.
+
+Decoding Step 1: Turning Words into Numbers
+The model does not understand words. It only understands numbers. So, the very first step is to convert words into numbers.
+
+This happens in two stages:
+
+Tokenization: The input text is split into small pieces called tokens. A token can be a word, part of a word, or even a single character. For the sake of understanding, let's treat each word as one token.
+
+"I love learning" becomes three tokens: "I", "love", "learning".
+
+Embedding: Each token is then converted into a vector of numbers called an embedding. An embedding is like a digital fingerprint for a word. Words with similar meanings get similar fingerprints.
+
+For example, "happy" and "joyful" would have very similar embeddings because they mean almost the same thing. But "happy" and "car" would have very different embeddings because they are unrelated.
+
+Decoding Step 2: Adding Word Order
+But, here is the catch. The encoder processes all input tokens at the same time - not one by one. This is great for speed, but it means the model has no idea which word comes first, second, or third.
+
+"I love AI" and "AI love I" would look the same to the model. But they mean very different things.
+
+Positional Encoding solves this. It adds a vector of numbers to each embedding that represents the position of the word. The 1st word gets a different position signal than the 2nd word, and so on.
+
+Think of it like seat numbers in a theater. Even if all the audience members arrive at the same time, their seat numbers tell us exactly where each person is supposed to sit. Positional encoding is the seat number for each word.
+
+After this step, the positional encoding numbers are combined into the embedding itself through addition. So, each token now carries a single vector of numbers that encodes both what the word means and where it sits in the sentence.
+
+Decoding Step 3: The Attention Mechanism
+This is the heart of the Transformer. The attention mechanism is the single most important idea that makes everything work.
+
+Attention allows each word to look at every other word in the sentence and decide how much focus to give to each one.
+
+Let's take the sentence: "The cat sat on the mat because it was tired."
+
+When the model processes the word "it", it needs to figure out what "it" refers to. Is it the cat? Is it the mat? The attention mechanism helps the model focus more on "cat" and less on "mat" because "cat" is more relevant to "it" in this context.
+
+How Attention Works
+Each word is converted into three things:
+
+Query (Q) - what this word is looking for
+Key (K) - what this word can offer
+Value (V) - the actual information this word carries
+
+
+The process works like this:
+
+First, each word uses its Query to compare with the Keys of all other words using a dot product. This produces attention scores - numbers that tell the model how relevant each pair of words is. 
+Then, these scores are scaled down (divided by √dₖ) to keep them in a manageable range.
+After scaling, the scores are normalized using softmax so they become probabilities that add up to 1. Finally, the model collects a weighted mix of the Values based on these probabilities.
+
+The result is that every word now carries information not just about itself, but about the words most relevant to it. The word "it" now carries a strong signal from "cat" because the attention mechanism figured out the connection.
+
+In simple words, attention lets each token borrow useful information from other relevant tokens before moving to the next layer.
+
+====================================
+Multi-Head Attention
+====================================
+The Transformer does not run attention just once. It runs it multiple times in parallel - each time from a different perspective. This is called multi-head attention.
+
+Think of it like a team of editors reviewing an article. One editor checks for grammar, another checks for factual accuracy, and another checks for flow. 
+Each editor looks at the same text but focuses on something different. Together, they provide a complete review.
+
+Each head in multi-head attention focuses on a different type of relationship between words. One head focuses on subject-verb connections. Another head focuses on which adjective describes which noun. 
+The outputs of all heads are combined to give the model a rich understanding of the text.
+
+==========================================
+Decoding Step 4: The Feed-Forward Network
+==========================================
+
+After the attention mechanism processes the words, the output passes through a feed-forward network.
+Think of it as a refinement step. If attention is about understanding relationships between words, the feed-forward network is about deepening the understanding of each word individually.
+It takes the enriched representation from attention and processes it further - sharpening the signal and removing noise. Every word passes through the same feed-forward network independently.
+
+===================================================================
+Decoding Step 5: Residual Connections and Layer Normalization
+====================================================================
+
+Inside each layer, there are two more important pieces that help the Transformer learn effectively. Let's understand each of them.
+
+Residual Connection (Skip Connection): After each sub-layer (attention or feed-forward network), the original input to that sub-layer is added back to the output. Think of it like taking notes in a class. Even after the teacher adds new information, we keep our original notes and combine the new information with them. This prevents the model from losing important information as data passes through many layers.
+
+In simple words, the output of each sub-layer is: output = sub-layer(input) + input.
+
+Layer Normalization: After each residual connection, the numbers are normalized - adjusted so they stay in a stable range. This prevents the numbers from becoming too large or too small as they pass through many layers. It keeps the training process stable and smooth.
+
+These two pieces are present in every single layer of both the encoder and decoder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
