@@ -139,35 +139,55 @@ In AI Agents, the LLM itself decides what to do next. The agent picks the tools,
 Before we learn how AI Orchestration works, we must know the main components that we orchestrate.
 
 LLMs - The language models that do the thinking, writing, and decision-making.
+
 Prompts - The instructions we give to the LLMs at each step.
+
 Tools - Functions that the system can call, like a search API, a database query, or a calculator.
+
 Memory - The place where we store past messages, results, and state across steps.
+
 Data Sources - Vector databases, knowledge bases, files, and APIs that give us information.
+
 Guardrails - Safety checks that block bad inputs and bad outputs.
+
 Routers - Logic that picks which step or which model to use next.
+
 Workflows - The graph of steps that defines how everything connects together.
+
 These are the building blocks. AI Orchestration is the art of putting them together in the right way.
 
 ## How AI Orchestration works
 Now, let's understand how AI Orchestration actually works at a high level. The steps are:
 
 Step 1: The user sends a request to the system.
+
 Step 2: The orchestrator reads the request and picks the first step in the workflow.
+
 Step 3: The first step runs. It can call an LLM, a tool, or a data source.
+
 Step 4: The orchestrator stores the output of the first step in the shared memory.
+
 Step 5: The orchestrator picks the next step based on the workflow definition and the current state.
+
 Step 6: The next step runs and produces its output.
+
 Step 7: The orchestrator keeps running steps until the workflow reaches its end.
+
 Step 8: The orchestrator sends the final output back to the user.
+
 At every step, the orchestrator can also log the input and output, check guardrails, retry on failure, and route to a different path based on the result. This is the power of AI Orchestration. It gives us full control over a complex AI system.
 
 ## Patterns of AI Orchestration
 There are five main patterns that we use again and again in AI Orchestration. Do not worry, we will learn about each of them in detail.
 
 Sequential Pattern - Steps run one after another.
+
 Parallel Pattern - Many steps run at the same time.
+
 Conditional Pattern - The next step depends on the output of the previous step.
+
 Loop Pattern - A step or a group of steps runs again and again until a condition is met.
+
 Orchestrator-Worker Pattern - A main orchestrator splits work and gives it to many workers.
 
 ## Fine-Tuning and Model Adaptation
