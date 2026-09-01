@@ -2,6 +2,8 @@
 
 ai-engineering-interview-questions/amitshekhariitbhu
 
+RAG-Amazon Bedrock.ipynb / Sandesh-hase
+
 # Transformer Architecture
 
 # Why Was the Transformer Needed?
