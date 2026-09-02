@@ -5,13 +5,20 @@
 - The main idea is that instead of calling an LLM directly with a prompt, LangChain provides building blocks to create a complete application around the LLM
 - for example, connecting it to documents, databases, APIs, tools, memory, and agents.
 
-Main components
+Main components:
+
 LLM/Chat Models – interact with models like GPT, Claude, Gemini.
+
 Prompts – create reusable instructions for the LLM.
+
 Chains – connect multiple steps/workflows together.
+
 Retrievers – fetch relevant information from a knowledge base.
+
 Vector Stores – store and search document embeddings.
+
 Tools – allow the LLM to call APIs, databases, calculators, etc.
+
 Agents – let the LLM decide which tools/actions to use.
 
 Why use LangChain?
@@ -19,9 +26,13 @@ We use LangChain to simplify the development of LLM applications, especially RAG
 tools, and workflows.
 
 ## 2. prompting techniques:
-Zero-shot: The model already knows the task 
-One-shot: The model needs to learn your format 
-Few-shot: The model needs to learn your custom pattern
+
+When the task is straightforward - like translating a sentence - the model already knows how to do it. No examples needed. That's zero-shot.
+
+But what if we want the output in a very specific format? Something the model can't guess on its own. We give one example to show the format - and the model follows it. That's one-shot.
+
+Now think about this - we want the model to classify bug priority as P0 or P2. This is our own custom system. The model has no idea what counts as P0 in our team. So we give it a few examples to learn the pattern. That's few-shot prompting.
+
 Chain-of-Thought (CoT) Prompting: is a technique where we ask the model to write out its reasoning steps before giving the final answer.
 In simple words, instead of asking for the answer directly, we ask the model to "think out loud" first.
 A thought is one small reasoning step. A chain is many small steps linked together, one after another. 
@@ -36,9 +47,11 @@ It helps the LLM answer using company-specific or up-to-date information instead
 # Rag Pipeline:
 
 1. Data ingestion:
+   
    Documents → Chunking → Embeddings → Vector Database
 
-2. User query:
+3. User query:
+   
    User Question →   Query Embedding   →  Vector Database Search  → Relevant Chunks →  Prompt + Context →  LLM →  Answer  
 
 Why use RAG?
@@ -53,13 +66,21 @@ Then I select the model, design the data pipeline, define retrieval and prompt s
 
 Key things I consider
 - Use case: What problem are we solving?
+  
 - LLM: Which model gives the required quality, latency, and cost?
+  
 - Data: Do we need RAG and a vector database?
+  
 - Prompt: How should the model be instructed?
+  
 - Tools/Agents: Does the model need to interact with APIs or databases?
+  
 - Security: Authentication, authorization, PII protection, prompt-injection protection.
+  
 - Evaluation: How do we measure accuracy, hallucination, and response quality?
+  
 - Deployment: AWS/cloud architecture, CI/CD, scaling, and availability.
+  
 - Monitoring: Latency, token usage, cost, errors, and model quality.
 
 ## evaluation of RAG using Graph dztabase etc
@@ -73,12 +94,16 @@ Tools:
 
 Test Questions + Ground Truth
           ↓
+          
        RAG Pipeline
           ↓
+          
       Generated Answer
           ↓
+          
      Evaluation Tool
           ↓
+          
    Metrics / Score / Report
 
 Important RAG metrics:
