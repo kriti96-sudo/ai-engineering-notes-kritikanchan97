@@ -326,9 +326,11 @@ Example
 Suppose we have:
 
 Doc 1: "I like machine learning"
+
 Doc 2: "I like deep learning"
 
 Words like "learning" appear in both documents → lower IDF.
+
 "machine" appears only in Doc 1 → higher IDF.
 
 So TF-IDF gives more weight to words that are frequent in a particular document but uncommon across documents.
@@ -350,19 +352,29 @@ Logistic Regression — Classification
 Common metrics:
 
 Accuracy – percentage of correct predictions.
+
 Precision – of predicted positives, how many are actually positive.
+
 Recall – of actual positives, how many did we correctly identify.
+
 F1 Score – balance between precision and recall.
+
 ROC-AUC – measures how well the model separates the classes.
+
 Log Loss – evaluates the quality of predicted probabilities.
 
 Linear Regression — Regression
+
 Common metrics:
 
 MAE (Mean Absolute Error) – average absolute difference between actual and predicted values.
+
 MSE (Mean Squared Error) – average squared error; penalizes large errors more.
+
 RMSE (Root Mean Squared Error) – square root of MSE, in the same units as the target.
+
 R² (R-squared) – indicates how much variance in the target is explained by the model.
+
 MAPE – average percentage error, useful when target values are suitable for percentage-based comparison
 
 
@@ -375,7 +387,9 @@ Example:
 "Apple hired John in Hyderabad."
 
 Apple    → ORGANIZATION
+
 John     → PERSON
+
 Hyderabad → LOCATION
 
 Common entities include PERSON, ORGANIZATION, LOCATION, DATE, MONEY, PRODUCT, etc.
@@ -400,8 +414,11 @@ from tensorflow import keras
 You can use them for:
 
 CNN → image classification, object detection, computer vision.
+
 RNN/LSTM/GRU → time-series and sequential data.
-NLP → text classification, sentiment analysis, sequence models.
+
+NLP → text classification, sentiment analysis, sequence models
+
 Deep learning regression/classification → when the problem is complex and traditional ML isn't sufficient.
 
 ## What is RAG and what does it entail?
@@ -418,17 +435,23 @@ for a user query, adding those chunks to the prompt, and finally sending the pro
                 RAG Architecture
 
 1. Data Ingestion                  2. Query / Retrieval
-─────────────────────             ─────────────────────
+    ↓                               ↓
+            
 Documents                          User Question
-   ↓                                    ↓
+   ↓
+                                  ↓
 Document Loader                  Query Embedding
-   ↓                                    ↓
+   ↓
+                                   ↓
 Chunking                         Vector / Hybrid Search
-   ↓                                    ↓
+   ↓
+                                    ↓
 Embedding Model                  Reranking
-   ↓                                    ↓
+   ↓
+                                     ↓
 Vector Database  ←──────────── Relevant Chunks
                                         ↓
+   
                                   Prompt + Context
                                         ↓
                                        LLM
@@ -442,6 +465,9 @@ Object-Oriented Programming (OOP) is a programming approach where we organize co
 operate on that data.
 
 The four main OOP concepts are:
+
+Class: A blueprint or template used to create objects. It defines variables and methods.
+Object: A real-world instance of a class that holds specific data and uses memory
 
 1. Encapsulation
 Encapsulation means bundling data and methods together inside a class and controlling access to the data.
@@ -458,11 +484,15 @@ Here, __balance is protected from direct access, and we modify it through method
 2. Inheritance
 Inheritance allows one class to reuse and extend the properties and methods of another class.
 
+allows a class (child class) to acquire properties and methods of another class (parent class). It supports hierarchical classification and promotes code reuse.
+
 class Animal:
+
     def speak(self):
         print("Animal speaks")
 
 class Dog(Animal):
+
     pass
 
 Dog inherits from Animal.
@@ -470,11 +500,15 @@ Dog inherits from Animal.
 3. Polymorphism
 Polymorphism means the same interface or method can behave differently depending on the object.
 
+means "same operation, different behavior." It allows functions or methods with the same name to work differently depending on the type of object they are acting upon.
+
 class Dog:
+
     def speak(self):
         print("Bark")
 
 class Cat:
+
     def speak(self):
         print("Meow")
 
@@ -482,6 +516,7 @@ Both have speak(), but the behavior is different. Polymorphism allows the same m
 
 4. Abstraction
 Abstraction means hiding implementation details and exposing only the essential functionality.
+Abstraction hides the internal implementation details while exposing only the necessary functionality. It helps focus on "what to do" rather than "how to do it."
 
 model.predict(data)
 you don't need to know all the internal mathematical operations used to generate the prediction.
@@ -490,8 +525,11 @@ Easy way to remember
 E-I-P-A
 
 Encapsulation → Protect data
+
 Inheritance → Reuse code
+
 Polymorphism → Same interface, different behavior
+
 Abstraction → Hide complexity
 
 ## Compare symmetric and asymmetric cryptography.
