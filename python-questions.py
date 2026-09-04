@@ -45,6 +45,29 @@ sentences = [
 
 print(word_frequencies(sentences))
 
+## Method 2: without nltk 
+
+from collections import Counter
+
+def word_frequencies(sentences):
+    stop_words = {"is", "a", "the", "this", "very"}
+    words = []
+
+    for sentence in sentences:
+        for word in sentence.lower().split():
+            word = word.strip(".,!?")
+            if word not in stop_words:
+                words.append(word)
+
+    return Counter(words)
+
+
+sentences = [
+    "This is a simple sentence.",
+    "This sentence is very simple."
+]
+
+print(word_frequencies(sentences))
 
 ## Implement gradient descent from scratch to minimize a quadratic function
 
@@ -150,6 +173,7 @@ import math
 
 def cosine_similarity(a, b):
     """
+    Cosine similarity is a way to measure how similar two vectors are based on their direction.
     Compute cosine similarity between two vectors a and b (lists or tuples).
     Returns a float in [-1, 1]. Handles zero vectors safely by returning 0.0.
     """
@@ -166,6 +190,14 @@ def cosine_similarity(a, b):
 v1 = [1, 2, 3]
 v2 = [4, 5, 6]
 print(cosine_similarity(v1, v2))  # ~0.974631846
+
+## Easy way to remember
+
+dot       → how much the vectors interact
+norm_a    → length / magnitude of vector A
+norm_b    → length / magnitude of vector B
+
+similarity = dot / (length A × length B)
 
 
 ## Implement a mini transformer attention mechanism (scaled dot-product attention) using NumPy.
@@ -243,6 +275,10 @@ def tokenize(text):
 
 print(token_count("Hello world from Python", tokenize))
 # This calls tokenize(text) only once, avoiding double tokenization.
+## method 2:
+
+def token_count(text):
+    return len(text.split())
 
 ## Mini RAG retrieval step — Given doc embeddings and a query, return documents whose cosine similarity exceeds a threshold, sorted by score.
 
@@ -382,6 +418,11 @@ def two_sum(nums, target):
 
 print(two_sum([2, 7, 11, 15], 9))
 # (0, 1)
+## brute force mehod:
+for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        if nums[i] + nums[j] == target:
+            return i, j
 
 '''
 String Questions
@@ -443,6 +484,12 @@ def reverse_words(s):
 print(reverse_words("I love Python"))
 # Python love I
 
+''' reverse every word, every character'''
+def reverse_string(s):
+    return " ".join(word[::-1] for word in s.split()[::-1])
+
+print(reverse_string("hello world python"))
+
 '''
 List of Tuples
 12. Sort list of tuples by second element ⭐
@@ -465,7 +512,21 @@ print(max(data, key=lambda x: x[1]))
 
 
 ''' 14. Convert list of tuples into dictionary'''
+# method 1: python functio 
 
+def tuple_to_dict(data):
+    result = {}
+
+    for x, y in data:
+        result[x] = y
+
+    return result
+
+data = [("a", 1), ("b", 2), ("c", 3)]
+
+print(tuple_to_dict(data))
+
+## Method 2: built in function
 data = [("a", 1), ("b", 2), ("c", 3)]
 
 result = dict(data)
@@ -510,26 +571,37 @@ print(result)
 
 data = {"a": 1, "b": 2, "c": 3}
 
-result = {v: k for k, v in data.items()}
+result = {y: x for x, y in data.items()}
 
 print(result)
-# {1: 'a', 2: 'b', 3: 'c'}
 
+# {1: 'a', 2: 'b', 3: 'c'}
+# without comprehension
+
+result = {}
+
+for x, y in data.items():
+    result[y] = x
 
 '''
 Nested List Questions
 19. Flatten a nested list ⭐
 '''
 
-Input:
-[[1, 2], [3, 4], [5, 6]]
+
+lst = [[1, 2], [3, 4], [5, 6]]
 
 Output:
 [1, 2, 3, 4, 5, 6]
 
 
-def flatten(data):
-    return [x for sublist in data for x in sublist]
+def flatten(lst):
+result = []
+for i in lst:
+    for x in i:
+        result.append(x)
+
+return result
 
 '''22. Matrix transpose ⭐'''
 
