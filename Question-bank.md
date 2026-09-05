@@ -584,7 +584,21 @@ Multithreading runs multiple threads within a single process and is mainly usefu
 Multiprocessing runs multiple independent processes with separate memory and is better for CPU-bound tasks. In Python, multiprocessing is particularly useful 
 for CPU-intensive parallel work because of the GIL.
 
-What are decision trees and random forest
+## what is LLM quantization?
+
+LLM quantization is a technique used to reduce the size and memory requirements of a large language model by representing its weights with fewer bits. For example, instead of using 16-bit precision, we can use 8-bit or 4-bit precision. This makes the model smaller, faster, and easier to run on limited hardware
+
+## Why do we need quantization?”, say:
+
+“Large language models require a lot of GPU memory. Quantization reduces the memory required, so we can run the model on cheaper or smaller GPUs, and sometimes get faster inference.”
+
+#example:
+
+“For example, a 7-billion-parameter model in FP16 may need around 14 GB just for the weights. With 4-bit quantization, it can come down to roughly 3.5 GB, although there is some additional memory overhead.”
+
+
+
+
 
 What is confusion matrix, and what is true pos and false pos means
 
