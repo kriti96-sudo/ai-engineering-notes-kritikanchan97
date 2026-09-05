@@ -107,27 +107,38 @@ Test Questions + Ground Truth
    Metrics / Score / Report
 
 Important RAG metrics:
+
 Faithfulness – Is the answer supported by the retrieved context?
+
 Answer Relevance – Does the answer actually address the question?
+
 Context Relevance – Did we retrieve relevant chunks?
+
 Context Recall – Did we retrieve the important information needed to answer?
+
 Correctness – Does the final answer match the expected answer?
 
 Where does a Graph Database fit?
+
 A graph database such as Neo4j can be used as the knowledge/retrieval layer, especially when relationships between entities are important.
 
 For example:
 
 Documents
    ↓
+   
 Entities + Relationships
    ↓
+   
 Graph Database
    ↓
+   
 Retrieve related information
    ↓
+   
   LLM
    ↓
+   
  Answer
 
 ## What us RAg What is inference engineering And how you deploy a model in production Using devops mlops
@@ -162,9 +173,9 @@ store them in a vector database, and use similarity search to retrieve semantica
 
 Some commonly used embedding models are:
 
-OpenAI: text-embedding-3-small, text-embedding-3-large
-Google: text-embedding-005
-Cohere: embed-v4.0
+- OpenAI: text-embedding-3-small, text-embedding-3-large
+- Google: text-embedding-005
+- Cohere: embed-v4.0
 
 
  RAG , retrieval and a project that I have worked on  
@@ -174,10 +185,15 @@ Cohere: embed-v4.0
 
 Method	Examples	When to use
 Supervised Learning:	Linear Regression, Logistic Regression, Decision Trees, Random Forest, XGBoost,	When you have labeled data and want to predict an outcome
+
 Unsupervised Learning:	K-Means, DBSCAN, PCA,	When you don't have labels and want to find patterns/groups
+
 Semi-Supervised Learning:	Label propagation, pseudo-labeling,	When you have a small amount of labeled data + lots of unlabeled data
+
 Reinforcement Learning:	Q-Learning, DQN, PPO	When an agent learns through actions, rewards, and feedback
+
 Deep Learning:	CNN, RNN, Transformers	For complex/high-dimensional data such as images, speech, and text
+
 Ensemble Learning:	Random Forest, XGBoost, LightGBM
 
 ## What is support vector in SVM? 
@@ -232,50 +248,66 @@ A larger parameter count generally gives the model more capacity, but it also in
 
 ## What are the types of libraries worked on NLP ?
 NLTK – Tokenization, stemming, lemmatization, POS tagging, and other traditional NLP tasks.
+
 spaCy – Fast NLP pipelines, NER, POS tagging, dependency parsing, etc.
+
 Hugging Face Transformers – Pretrained Transformer models such as BERT, T5, and GPT-style models.
+
 Gensim – Word embeddings and topic modeling; commonly used for Word2Vec and similar techniques.
+
 Stanford NLP / CoreNLP – Traditional NLP processing and linguistic analysis.
+
 scikit-learn – TF-IDF, Bag-of-Words, text classification, clustering, and traditional ML for NLP.
+
 PyTorch / TensorFlow – Deep-learning frameworks used to build and train custom NLP models.
 
 ## What is the difference between deep learning, Machine Learning, Agentic AI & Gen AI?
 
-Machine Learning (ML)
+Machine Learning (ML):
+
 ML enables machines to learn patterns from data and make predictions or decisions without being explicitly programmed for every rule.
 
-Deep Learning (DL)
+Deep Learning (DL):
+
 Deep Learning is a subset of ML that uses multi-layer neural networks to learn complex patterns from large amounts of data.
 
 Example: Image recognition, speech recognition, NLP.
 CNNs, RNNs, LSTMs, and Transformers are examples of deep-learning architectures.
 
-Generative AI (GenAI)
+Generative AI (GenAI):
+
 Generative AI refers to AI systems that can generate new content such as text, images, audio, video, or code based on learned patterns.
 
-Agentic AI
+Agentic AI: 
+
 Agentic AI refers to AI systems that can autonomously plan and execute multiple steps to achieve a goal, often using tools, APIs, databases, or other systems.
 
 ## What is stemming and Lemmatization ? and which would you prefer?
 
 Stemming: 
+
 Stemming reduces a word to its root form by removing prefixes or suffixes, usually without understanding the word's meaning.
 
 Examples:
 
 playing   → play
+
 studies   → studi
+
 connected → connect
 
 It's fast, but the result may not be a valid word.
 
-Lemmatization
+Lemmatization:
+
 Lemmatization converts a word to its correct dictionary/base form (lemma) by considering the word's meaning and grammatical context.
 
 Examples:
 
 playing → play
+
 studies → study
+
 better  → good
 
 It's generally more accurate but computationally more expensive than stemming.
@@ -288,10 +320,15 @@ I would use stemming when I need a faster and simpler preprocessing approach and
 
 If someone chooses stemming over lemmatization, the main reason is usually speed and simplicity.
 Possible reasons: 
+
 Faster: Stemming uses simple rules, so it's computationally cheaper.
+
 Less resource-intensive: Useful when processing millions of documents.
+
 Good enough for search: For keyword matching or information retrieval, an exact dictionary word may not be necessary.
+
 Simple implementation: Doesn't require linguistic analysis or context.
+
 Real-time requirements: If preprocessing must be extremely fast, stemming can be preferable.
 
 ## Why do you use LLM model if you can fetch the required documents from vector database in RAG Approach ?
@@ -302,6 +339,7 @@ and then pass that context to the LLM. The LLM understands the question, uses th
 Easy way to remember:
 
 Vector DB = Find the information
+
 LLM = Understand and communicate the information
 
 # What is TF-IDF vectorizer explain?
@@ -338,10 +376,12 @@ So TF-IDF gives more weight to words that are frequent in a particular document 
 
 ## Difference between logistic regression and linear regression and the examples
 
-Linear Regression
+Linear Regression:
+
 Linear regression predicts a continuous numerical value based on one or more input features.
 
-Logistic Regression
+Logistic Regression:
+
 Logistic regression is primarily used for binary classification. It predicts the probability of an observation belonging to a class using the sigmoid function.
 
 If probability > 0.5, we might classify it as Yes, otherwise No. The threshold can be changed depending on the business requirement.
