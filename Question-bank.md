@@ -1,3 +1,17 @@
+## What is generator & Decorator?
+
+Generator: A generator is a special type of function that returns values one at a time instead of returning everything at once.
+
+- A generator is a function that uses the yield keyword to return values one at a time.
+- It pauses after each yield and continues from the same point when the next value is requested.
+- Generators are useful for processing large amounts of data because they are memory efficient."
+
+Decorator: 
+
+A decorator is a function that adds extra behavior to another function without modifying its original code. It works by taking the original function as input, wrapping it with additional logic, and returning the wrapper function
+
+
+
 ## 1. What is langchain & its component & why use?
 
 - LangChain acts as a framework around the LLM, helping us connect the model with external data, tools, and application logic.
