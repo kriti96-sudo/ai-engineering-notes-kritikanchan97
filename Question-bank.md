@@ -597,28 +597,59 @@ LLM quantization is a technique used to reduce the size and memory requirements 
 “For example, a 7-billion-parameter model in FP16 may need around 14 GB just for the weights. With 4-bit quantization, it can come down to roughly 3.5 GB, although there is some additional memory overhead.”
 
 
+## What is the difference between encoder-only (BERT), decoder-only (GPT), and encoder-decoder (T5) architectures?
 
+LLMs are generally categorized based on how they process input and generate output.
 
+1. Encoder-Only Models (BERT)
 
-What is confusion matrix, and what is true pos and false pos means
+Encoder-only architectures focus on understanding input text rather than generating new text.
 
-Difference between list and tuple
+Key Characteristics:
 
-Difference between iloc and loc
+- Processes entire input simultaneously
+- Produces contextual embeddings
+- Used mainly for classification and understanding tasks
 
-How to read an excel file with sheet name 2 in pandas
+Common Use Cases:
 
-# Can you describe Ridge regression and how it differs from standard linear regression?
+- Sentiment analysis
+- Named entity recognition
+- Question answering
 
-# Explain supervised and unsupervised learning algorithms of your choice
-Supervised learning — Random Forest
-Unsupervised learning — K‑means clustering
+2. Decoder-Only Models (GPT)
 
-## Explain file handling in Python.
+Decoder-only models specialize in text generation by predicting the next token in a sequence.
 
-## What are the different types of prompts?
+Key Characteristics:
 
-## Describe scenarios you have encountered in project management and how you handled them.
+- Uses causal attention (looks only at previous tokens)
+- Generates text step-by-step
+- Strong performance in conversational AI and content generation
+
+Common Use Cases:
+
+- Chatbots
+- Code generation
+- Content writing
+
+3. Encoder-Decoder Models (T5)
+
+Encoder-decoder models combine both understanding and generation capabilities.
+
+Key Characteristics:
+
+- Encoder processes input text
+- Decoder generates output text
+- Suitable for transformation tasks
+
+Common Use Cases:
+
+- Translation
+- Summarization
+- Paraphrasing
+- Quick Comparison
+
 
 
 
