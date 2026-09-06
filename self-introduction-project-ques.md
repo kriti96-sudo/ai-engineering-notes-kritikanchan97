@@ -3,19 +3,18 @@
 Hi, my name is Kriti Kanchan, and I have around 4 years of professional experience in the IT and data domain.
 
 Currently, I’m working at HCL Technologies as a Senior Software Engineer for the USAA Bank client. I started my journey at HCL working on a Data Engineering project,
-where I worked with technologies like Snowflake, dbt, Oracle, SQL Server, Python, AWS S3, and Linux. I was involved in data pipelines, data validation and profiling, 
+where I worked with technologies like Snowflake, dbt, SQL Server, Python, AWS S3, and Linux. I was involved in data pipelines, data validation and profiling, 
 API data extraction, data modeling, CI/CD activities, and production support.
 
-After that, I moved to the Enterprise team under the SDM-Discovery / Protect team, where I currently focus on automation and Agentic AI solutions using MCP configuration
-with GitLab, use GitHub Copilot to create agents. Currently, I’m also researching the implementation of RAG technology using AWS Bedrock services for AI-powered 
-solutions.
+After that, I moved to the Enterprise team under the SDM-Discovery / Protect team, where I currently focus on automation and Agentic AI solutions using MCP  with GitLab configuration, use GitHub Copilot to create agents. Currently, I’m also researching the implementation of RAG technology using AWS Bedrock services for AI-powered solutions.
 
 Previously, I worked at Learnbay as a Data Analyst on a one-year contractual role. I worked on data analysis and machine learning projects, where I developed a 
-machine learning-based trend analysis system to identify business trends and support forecasting. I also worked on NLP-based sentiment analysis to extract insights 
-from customer feedback. In addition, I monitored business and product KPIs, prepared daily performance reports, performed data analysis based on business requirements, and presented insights and project demos to stakeholders.
+machine learning-based trend analysis system to identify business trends and support forecasting. I also worked on NLP-based sentiment analysis to extract insights from customer feedback. In addition, I monitored business and product KPIs, prepared daily performance reports, performed data analysis based on business requirements.
 
-Before Learnbay, I worked at Cordlife India as a part of data quality team, where I collaborated with cross-functional teams,  monitored data accuracy using CRM and 
-Nagios, created Power BI dashboards, and handled customer escalations by identifying root causes and providing solutions.
+Before Learnbay, I worked at Cordlife India as a part of data quality team, I was of data quality team, where I primarily worked with medical insurance-related data.
+- My main responsibility was to perform data validation based on predefined business rules, quality guidelines, and process requirements.
+- I validated records for completeness, accuracy, consistency, and adherence to the defined guidelines.
+- Whenever I identified missing, incorrect, or inconsistent information, I flagged the exceptions, investigated the issue, and coordinated with the relevant teams for resolution. For monitoring i used Nagios monitoring tool. 
 
 Overall, my experience combines Data Engineering, Data Analytics, and AI/ML, with a strong focus on automation and emerging AI technologies.
 
