@@ -650,11 +650,77 @@ Common Use Cases:
 - Paraphrasing
 - Quick Comparison
 
+# What is chunking and what strategies exist (fixed, semantic, recursive)?
+
+Chunking is the process of splitting large documents into smaller segments before embedding and indexing them for retrieval. 
+
+Common chunking strategies:
+
+Fixed-size chunking:
+
+- Splits text into equal-length chunks
+- Simple but may break semantic boundaries
+
+Semantic chunking:
+
+- Splits text based on meaning or topic shifts
+- Preserves contextual coherence
+
+Recursive chunking:
+
+- Uses hierarchical rules (paragraph - sentence - clause)
+- Balances structure and flexibility
+- Note: Poor chunking often leads to irrelevant retrievals, even if embeddings and vector databases are well configured
+
+## What are vector databases and how do you choose between Pinecone, Weaviate, Chroma, and FAISS?
+
+- Vector databases are specialized systems designed to store, index, and search high-dimensional vector embeddings efficiently.
+- In RAG pipelines, they are used to retrieve semantically similar documents based on embedding distance.
+
+Choosing a vector database depends on factors such as scale, deployment requirements, and system complexity.
+
+Key selection considerations:
+
+Pinecone:
+
+- Fully managed, production-ready
+- Strong scalability and reliability
+- Suitable for large-scale enterprise systems
+ 
+Weaviate:
+
+- Open-source with managed options
+- Supports hybrid search and metadata filtering
+- Good for flexible, schema-aware applications
+
+Chroma:
+
+- Lightweight and developer-friendly
+- Ideal for local development and prototyping
+- Often used with LangChain-based pipelines
+
+FAISS:
+
+- High-performance similarity search library
+- Requires custom infrastructure setup
+- Common in research and custom deployment
 
 
+# What is the difference between sparse retrieval (BM25) and dense retrieval?
 
+Sparse retrieval (BM25):
+ 
+- Uses keyword-based matching
+- Performs well for exact queries
+- Lightweight and easy to implement
+ 
+Dense retrieval:
 
+- Uses embedding similarity
+- Handles paraphrasing and semantic variation
+- Better suited for conversational and natural language queries
 
+In practice, many production RAG systems use hybrid retrieval, combining both sparse and dense approaches to maximize recall and precision
 
 
 
