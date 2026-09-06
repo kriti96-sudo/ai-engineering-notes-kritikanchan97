@@ -6,8 +6,29 @@ RAG-Amazon Bedrock.ipynb / Sandesh-hase
 
 # Transformer Architecture
 
-- A transformer in artificial intelligence is a type of neural network architecture that processes entire sequences of data all at once rather than word-by-word or step-by-step. 
-- First introduced in the 2017 research paper "Attention Is All You Need" by Google researchers, transformers form the core foundation for modern generative AI tools like ChatGPT, Claude, and Gemin
+- A transformer is a type of neural network architecture that processes entire sequences of data all at once rather than word-by-word or step-by-step. 
+- First introduced in the 2017 research paper "Attention Is All You Need" by Google researchers, transformers form the core foundation for modern generative AI tools like ChatGPT, Claude, and Gemini.
+
+# Generative AI: 
+- Generative artificial intelligence (GenAI) is a type of artificial intelligence that creates new content—such as text, images, audio, video, and code—by learning patterns from existing data.
+- Systems learn from massive sets of information, such as books, websites, or art collections.
+- Pattern Recognition: Models use neural networks—like Transformers—to find relationships in data and predict what comes next.
+
+# Agentic AI:
+
+- Agentic AI is artificial intelligence that can act independently to achieve a goal instead of just answering questions.
+- Traditional AI (Chatbots): You ask a question, and it gives you an answer. You still have to do all the work.
+- Agentic AI: You give it a big goal. It makes a plan, breaks it into smaller steps, uses outside tools (like browsing the web or sending emails), fixes its own mistakes, and finishes the job with little to no human help.
+
+# Deep Learning:
+
+- Deep learning is a subset of machine learning powered by multi-layered artificial neural networks that mimic the learning process of the human brain.
+- Multiple Layers: An input layer receives raw data, hidden layers process it through increasing levels of abstraction, and an output layer makes a final prediction or classification.
+
+# Machine Learning: 
+
+- Machine learning is a branch of Artificial Intelligence that teaches computers to learn from data and make decisions.
+- Instead of writing hardcoded rules, you feed vast amounts of data and examples into an algorithm, allowing the computer to find patterns on its own and build a predictive model.
 
 # Why Was the Transformer Needed?
 
