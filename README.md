@@ -6,6 +6,9 @@ RAG-Amazon Bedrock.ipynb / Sandesh-hase
 
 # Transformer Architecture
 
+- A transformer in artificial intelligence is a type of neural network architecture that processes entire sequences of data all at once rather than word-by-word or step-by-step. 
+- First introduced in the 2017 research paper "Attention Is All You Need" by Google researchers, transformers form the core foundation for modern generative AI tools like ChatGPT, Claude, and Gemin
+
 # Why Was the Transformer Needed?
 
 Before the Transformer, models processed words one by one, in order - like reading a sentence from left to right, one word at a time.
