@@ -64,14 +64,14 @@ Rules:
 
 ## How a ReAct Agent Thinks and Acts
 
-Step 1: The user sends a question. The Loop Controller adds it to the Memory.
-Step 2: The Loop Controller sends the Memory (system prompt + user question + history) to the LLM.
-Step 3: The LLM responds with either a Thought + Action, or a Final Answer.
-Step 4: If the response is a Final Answer, the Loop Controller returns it to the user. The agent is done.
-Step 5: If the response is a Thought + Action, the Loop Controller executes the tool and gets the result. This result is the Observation.
-Step 6: The Loop Controller appends the Thought, Action, and Observation to the Memory.
-Step 7: Go back to Step 2.
-This loop continues until the LLM produces a Final Answer or the maximum step limit is reached.
+- Step 1: The user sends a question. The Loop Controller adds it to the Memory.
+- Step 2: The Loop Controller sends the Memory (system prompt + user question + history) to the LLM.
+- Step 3: The LLM responds with either a Thought + Action, or a Final Answer.
+- Step 4: If the response is a Final Answer, the Loop Controller returns it to the user. The agent is done.
+- Step 5: If the response is a Thought + Action, the Loop Controller executes the tool and gets the result. This result is the Observation.
+- Step 6: The Loop Controller appends the Thought, Action, and Observation to the Memory.
+- Step 7: Go back to Step 2.
+- This loop continues until the LLM produces a Final Answer or the maximum step limit is reached.
 
 
 ## Implementing a ReAct Agent
